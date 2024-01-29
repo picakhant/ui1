@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body data-bs-theme="dark">
+    <div class="container-fluid">
+      <div class="row align-items-center justify-content-center vh-100">
+        <div class="col-12 col-md-6 d-flex flex-column gap-2">
+          <div class="display-3 fw-semibold">Welcome From Poster</div>
+          <div style="text-align: justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            harum omnis nihil illum natus, doloribus magni blanditiis a, aliquam
+            animi ut voluptaterovidentp
+          </div>
+          <div class="d-flex gap-3">
+            <div
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#signupModel"
+            >
+              Sign up
+            </div>
+            <div
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModel"
+            >
+              Login
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <!-- Sign up Model -->
+    <div
+      class="modal fade"
+      id="signupModel"
+      tabindex="-1"
+      aria-labelledby="signupModelLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="signupModelLabel">Sign Up</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="d-flex flex-column gap-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="First Name"
+              />
+              <input type="text" class="form-control" placeholder="Last Name" />
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email Address"
+              />
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+              />
+            </form>
+          </div>
+          <div class="modal-footer d-block">
+            <a href="./pages/Home.html" class="btn btn-primary w-100"
+              >Sign up</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Model -->
+    <div
+      class="modal fade"
+      id="loginModel"
+      tabindex="-1"
+      aria-labelledby="loginModelLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="loginModelLabel">Welcome Back</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="d-flex flex-column gap-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email Address"
+              />
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+              />
+            </form>
+          </div>
+          <div class="modal-footer d-block">
+            <a href="./pages/Home.html" class="btn btn-primary w-100">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .edt-hover:hover {
+        background-color: rgb(110, 109, 108);
+      }
+
+      .custom-sticky {
+        position: sticky;
+        top: 68px;
+        z-index: 2000;
+      }
+
+      .custom-sticky-ad {
+        position: sticky;
+        top: 68px;
+      }
+    </style>
+  </head>
+  <body data-bs-theme="dark">
+    <div class="container-fluid">
+      <!-- navbar  -->
+      <div class="row sticky-top mb-3">
+        <div
+          class="col-12 p-2 d-flex justify-content-between align-items-center bg-primary"
+        >
+          <!-- brand -->
+          <div class="d-flex align-items-center gap-2">
+            <img src="../public/brand.png" alt="brand" style="height: 50px" />
+            <h3>POSTER</h3>
+          </div>
+          <!-- right item -->
+          <div class="d-flex">
+            <!-- display none in md size and above -->
+            <div class="btn btn-sm d-md-none">
+              <i class="fa-solid fa-magnifying-glass fs-3"></i>
+            </div>
+            <!-- disply in md and above -->
+            <form class="d-none d-md-block">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search sth..."
+                  aria-describedby="nav-bar-search"
+                />
+                <span class="input-group-text" id="nav-bar-search"
+                  ><i class="fa-solid fa-magnifying-glass fs-5"></i
+                ></span>
+              </div>
+            </form>
+            <!-- user dropdown  -->
+            <div class="btn-group dropstart">
+              <div data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="btn btn-dark btn-sm ms-2">
+                  <i class="fa-solid fa-user fs-3"></i>
+                </div>
+              </div>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item">Zaw Win Khant</li>
+                <li class="dropdown-item">zawwinkhant94@gmail.com</li>
+                <li class="dropdown-item">Second Year CS</li>
+                <li class="dropdown-item">Section B</li>
+                <li class="dropdown-item">
+                  <a href="../index.html">Log Out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- mobile item views including home, chat .... -->
+        <div
+          class="col-12 d-sm-none p-3 d-flex justify-content-between bg-body-secondary"
+        >
+          <i role="button" class="fa-solid fs-3 fa-house"></i>
+          <i role="button" class="fa-solid fs-3 fa-circle-info"></i>
+          <i role="button" class="fa-solid fs-3 fa-people-group"></i>
+          <i role="button" class="fa-solid fs-3 fa-comments"></i>
+          <i role="button" class="fa-solid fs-3 fa-flag"></i>
+        </div>
+      </div>
+      <!-- content -->
+      <div class="row">
+        <!-- left side bar -->
+        <div class="col-md-4 col-lg-3 d-none d-md-block vh-100 custom-sticky">
+          <div
+            class="fs-5 d-flex gap-2 align-items-center edt-hover p-3 border-secondary rounded border-bottom"
+            role="button"
+          >
+            <i class="fa-solid fa-house"></i>
+            Home
+          </div>
+          <div
+            class="fs-5 d-flex gap-2 align-items-center edt-hover p-3 border-secondary rounded border-bottom"
+            role="button"
+          >
+            <i class="fa-solid fa-circle-info"></i>
+            About
+          </div>
+          <div
+            class="fs-5 d-flex gap-2 align-items-center edt-hover p-3 border-secondary rounded border-bottom"
+            role="button"
+          >
+            <i class="fa-solid fa-people-group"></i>
+            Group
+          </div>
+          <div
+            class="fs-5 d-flex gap-2 align-items-center edt-hover p-3 border-secondary rounded border-bottom"
+            role="button"
+          >
+            <i class="fa-solid fa-comments"></i>
+            Chat Box
+          </div>
+          <div
+            class="fs-5 d-flex gap-2 align-items-center edt-hover p-3 border-secondary rounded border-bottom"
+            role="button"
+          >
+            <i class="fa-solid fa-flag"></i>
+            Pages
+          </div>
+        </div>
+        <!-- posts -->
+        <div
+          class="col-12 col-md-8 col-lg-6 d-flex flex-column gap-3"
+          id="post-container"
+        >
+          <!-- post card from js-->
+        </div>
+        <!-- right side bar -->
+        <div class="col-lg-3 d-none d-lg-block custom-sticky-ad vh-100">
+          <img
+            src="https://en.myanmartechpress.com/wp-content/uploads/2020/08/Artwork_Don-Don-Don_Double-the-Data-512x445.jpg"
+            class="w-100 rounded-3"
+            alt="Ads"
+          />
+          <img
+            src="https://img.freepik.com/premium-photo/luck-success-casino-when-playing-casino-slot-machine_124507-54652.jpg"
+            class="w-100 rounded-3 mt-3"
+            alt="Ads"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- bootstrap js -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <!-- custom scrip -->
+    <script>
+      const postContainer = document.getElementById("post-container");
+      for (let i = 0; i < 100; i++) {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = `
+        <div class="card-header d-flex align-items-center gap-2">
+              <img
+                src="../public/user-profile.png"
+                alt="profile pic"
+                style="height: 50px"
+              />
+              <div class="">
+                <div class="fw-semibold">Username</div>
+                <small class="text-muted">example123@gmail.com</small>
+              </div>
+              <div class="btn btn-sm ms-auto">
+                <i class="fa-solid fa-ellipsis fs-3"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-text" style="text-align: justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
+                voluptates iste. Id, rerum repellat ab odio explicabo fuga. Ipsa
+                quos dolore sequi id accusantium magni laboriosam aliquid,
+                cupiditate pariatur provident.
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <!-- reactions icons -->
+              <div class="">
+                <div class="btn btn-sm" title="Like">
+                  <i class="fa-solid fa-heart text-danger fs-3"></i>
+                </div>
+                <div class="btn btn-sm" title="Comment">
+                  <i class="fa-solid fa-comment fs-3"></i>
+                </div>
+                <div class="btn btn-sm" title="Share">
+                  <i class="fa-solid fa-share fs-3"></i>
+                </div>
+              </div>
+              <!-- view count -->
+              <div class="">
+                <small class="text-muted">123k</small>
+                <div class="btn btn-sm" title="Count">
+                  <i class="fa-solid fa-eye text-danger fs-3"></i>
+                </div>
+              </div>
+            </div>
+        `;
+        postContainer.append(card);
+      }
+    </script>
+  </body>
+</html>
